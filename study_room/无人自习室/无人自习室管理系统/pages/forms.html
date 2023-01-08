@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>自习室管理系统</title>
+    <!-- 样式引入 -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <style>
+        #submit {
+            background-color: rgb(40, 139, 245);
+            color: aliceblue;
+            position: relative;
+        }
+
+        #showTab {
+            /* text-align: center; */
+            text-indent: 2rem;
+            margin-bottom: 30px;
+        }
+
+        #showTab .numTitle {
+            text-indent: 0.5rem;
+        }
+
+        body {
+            min-width: 1200px;
+        }
+
+        .popupStyle {
+            display: none;
+            width: 300px;
+            background-color: rgb(174, 123, 123);
+            color: rgb(2, 0, 69);
+            text-align: center;
+            font-size: 30px;
+            border-radius: 5px;
+            padding: 8px 0;
+            position: fixed;
+            z-index: 1;
+            top: 20%;
+            left: 50%;
+            margin-left: -80px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <span class="popupStyle">提示信息</span>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <a class="navbar-brand" href="#">自习室管理系统</a>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li>
+                        <a href="flot.html"><img src="../img/折线图.svg" alt="" style="margin-top:-3px"> 可视化分析</a>
+
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="tables.html"><img src="../img/列表.svg" alt="" style="margin-top:-3px"> 订单列表展示</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><img src="../img/申请.svg" alt="" style="margin-top:-3px"> 自习室创建申请</a>
+                    </li>
+
+
+                    <li>
+                        <!-- <a href="login.html"><i class="fa fa-user fa-fw"></i> Sample Pages
+                                                    </a> -->
+                        <a href="login.html">
+                            <img src="../img/登录.svg" alt="" style="margin-top:-3px">
+                            登录
+                        </a>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">创建自习室</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            基本信息填写
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>场馆名称</label>
+                                            <input class="form-control" id="rname">
+                                            <!-- <p class="help-block">Example block-level help text here.</p> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label>联系电话</label>
+                                            <input class="form-control" id="rtel">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>所在城区</label>
+                                            <select class="form-control" id="sel1">
+                                                <option>请选择</option>
+                                            </select>
+                                            <select class="form-control" id="sel2">
+                                                <option>请选择</option>
+                                            </select>
+                                            <select class="form-control" id="sel3">
+                                                <option>请选择</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>详细地址</label>
+                                            <input class="form-control" id="address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">经纬度</label>
+                                            <input type="text" id="jw" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+
+                                            <a href="https://lbs.qq.com/getPoint/">获取经纬度</a>
+                                        </div>
+
+
+
+
+                                    </form>
+                                    <button class="btn btn-default" id="submit">提交创建</button>
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <label for="">自习室座位数</label>
+
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control" id="rseat">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                        <label for="">收费标准</label>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">￥</span>
+                                            <input type="text" class="form-control" id="rmoney">
+                                            <span class="input-group-addon">元/小时</span>
+                                        </div>
+
+                                    </form>
+                                    <h2>补充材料</h2>
+                                    <!-- <form role="form"> -->
+                                    <!-- <form action="" id="form1"> -->
+                                    <div class="form-group">
+                                        <label>经营许可证</label>
+                                        <input type="file" id="licence">
+                                    </div>
+                                    <!-- </form> -->
+
+                                    <div class="form-group">
+                                        <label>场馆照片</label>
+                                        <input type="file" id="photo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>座位图</label>
+                                        <input type="file" id="seatPhoto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">自习室描述</label>
+                                        <textarea name="" id="desc" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header">已创建自习室</h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="new">
+                <table class="table" id="showTab">
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/location.js"></script>
+    <script src="../js/address.js"></script>
+    <script>
+        var sel1 = document.getElementById("sel1")
+        var sel2 = document.getElementById("sel2")
+        var sel3 = document.getElementById("sel3")
+        // var address = document.getElementById("address")
+        var address;
+        var cityArr = []; //市级数组
+        var areaArr = []; //区级数组
+
+
+        //省级遍历
+        citys.forEach(v => {
+            var option = new Option(v.name);
+            sel1.options.add(option);//省
+        })
+
+        var sel1Index = 0;
+        sel1.onchange = function () {
+            // console.log(this.selectedIndex);//请选择和省级下标 (这里的请选择下标为0，省级下标从1开始)
+
+            sel1Index = this.selectedIndex - 1;// 设定数组省级下标从0开始
+            //  console.log(sel1Index);
+            sel2.options.length = 0;//点击省选项改变清空之前市级选项
+            sel3.options.length = 0;
+            if (sel1Index != -1) {
+                cityArr = citys[sel1Index].city
+                //console.log(cityArr);
+                //市级遍历
+                cityArr.forEach(v => {
+                    var option = new Option(v.name);
+                    sel2.options.add(option);//市
+                })
+
+                areaArr = cityArr[0].area;
+                sel3.options.length = 0;
+                //区级遍历
+                areaArr.forEach(v => {
+                    var option = new Option(v);
+                    sel3.options.add(option);//区
+                })
+
+            }
+            else {
+                address = "";
+            }
+        }
+
+        var sel2Index = 0;
+        sel2.onchange = function () {
+            sel2Index = this.selectedIndex;
+            console.log(sel2Index);
+            areaArr = cityArr[sel2Index].area;
+
+            sel3.options.length = 0;
+            //区级遍历
+            areaArr.forEach(v => {
+                var option = new Option(v);
+                sel3.options.add(option);//区
+            })
+            address = citys[sel1Index].name + cityArr[sel2Index].name + areaArr[0];
+        }
+        var sel3Index = 0;
+        sel3.onchange = function () {
+            sel3Index = this.selectedIndex;
+            address = citys[sel1Index].name + cityArr[sel2Index].name + areaArr[sel3Index];
+
+        }
+
+    </script>
+
+    <script>
+        console.log("1111");
+        var addr = document.getElementById("address");
+
+
+    </script>
+</body>
+
+</html>

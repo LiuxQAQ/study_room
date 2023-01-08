@@ -1,0 +1,240 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #101f40;
+}
+
+#head {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: cadetblue;
+}
+
+#showTab {
+    position: relative;
+    width: 90%;
+    /* height: 300px; */
+    left: 5%;
+    margin-top: 1%;
+    /* border: 0.01px solid pink; */
+    /* color: cornflowerblue; */
+}
+
+h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: #34b0fe;
+    letter-spacing: 0.5em;
+}
+
+span {
+    position: relative;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 100%;
+    margin-left: 7%;
+}
+
+span select {
+    height: 30px;
+    position: relative;
+    width: 14%;
+    line-height: 40px;
+    font-size: 100%;
+    border-radius: 10px;
+    /* background-color: #00c6fb; */
+    color: black;
+    border: 00.01px solid #00c6fb;
+}
+
+option {
+    /* text-indent: 2em; */
+    /* float: right; */
+    text-align: center;
+    /* color: blue; */
+}
+
+#second {
+    margin-left: 55%;
+}
+
+#showTable {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    margin-top: 1%;
+    /* border: 0.01px solid gray; */
+}
+
+table {
+    /* border: 0.001px solid rgb(199,188,188); */
+    border-radius: 15px;
+    /* height: 30px; */
+    text-align: center;
+    border-spacing: 0px;
+}
+
+
+
+table th,
+table td {
+    border: 0px;
+}
+
+
+table tr {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    border : 0.01px solid white;
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+table td,th {
+    /* border-top: 0.001px solid gray; */
+    display: inline-block;
+}
+
+th {
+    color: cornsilk;
+}
+
+
+
+tr:hover tr{
+    background-color: coral;
+}
+
+.num,
+.grade,
+.firstV,
+.secondV,
+.more {
+    position: relative;
+    width: 11%;
+}
+
+.name,
+.profession {
+    position: relative;
+    width: 20%;
+}
+
+.num {
+    margin-left: -5%;
+}
+
+.first{
+    cursor: pointer;
+}
+.last{
+    cursor: pointer;
+}
+.next{
+    cursor: pointer;
+}
+.prev{
+    cursor: pointer;
+}
+.number{
+    cursor: pointer;
+}
+.container{
+    width: 1190px;
+    margin: 0 auto;
+}
+
+#pager{
+    display: flex;
+    justify-content: center;
+}
+
+#pager div{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+div.selected{
+    background-color: #34b0fe;
+    color: white;
+}
+
+div.omit{
+    color: #999;
+}
+
+p {
+    color: #00c6fb;
+}
+
+.warningAll,
+.warningSuccess {
+    /* display: none; */
+    position: absolute;
+    width: 40%;
+    height: 50px;
+    top: 30%;
+    margin-left: 30%;
+    background-color: #fff;
+    color: crimson;
+    /* border: 0.001px solid gray; */
+    border-radius: 20px;
+    text-align: center;
+    line-height: 50px;
+    z-index: 500;
+    letter-spacing: 0.2em;
+    /* transform: translate(0,-50%); */
+}
+
+.warningSuccess {
+    background-color: #8ed871;
+    color: white;
+}
+
+.bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-out .5s;
+    display: none;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounce-out {
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    } 
+    0% {
+        transform: scale(0);
+    }
+  }

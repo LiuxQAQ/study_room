@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/study_room.iml" filepath="$PROJECT_DIR$/.idea/study_room.iml" />
+      <module fileurl="file://$PROJECT_DIR$/study_room_admin/study_room_admin.iml" filepath="$PROJECT_DIR$/study_room_admin/study_room_admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/study_room_app/study_room_app.iml" filepath="$PROJECT_DIR$/study_room_app/study_room_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/study_room_framework/study_room_framework.iml" filepath="$PROJECT_DIR$/study_room_framework/study_room_framework.iml" />
+    </modules>
+  </component>
+</project>
